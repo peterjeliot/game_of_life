@@ -17,6 +17,15 @@ class Life
     @dirs.map(([dr, dc]) =>
       @isAlive(r+dr, c+dc) ? 1 : 0
     ).reduce (a, b) -> (a + b)
+  toString: ->
+    "\n" +
+    @grid.map (row, r) ->
+      " " +
+      row.map (cell, c) -> (if cell then "*" else ".")
+      .reduce (a, b) -> (a + b)
+    .reduce (a, b) -> (a + "\n" + b)
+
+
 
 
 
@@ -25,8 +34,15 @@ game = new Life([[false, false, false],
                  [ true,  true,  true],
                  [false, false, false]])
 
-console.log game.isAlive(b, a) for a in [0..2] for b in [0..2]
-console.log game.neighborsAlive(1,1)
+# console.log game.isAlive(b, a) for a in [0..2] for b in [0..2]
+# console.log game.neighborsAlive(1,1)
 game.step()
-console.log game.isAlive(b, a) for a in [0..2] for b in [0..2]
-console.log game.neighborsAlive(1,1)
+console.log game.toString()
+game.step()
+console.log game.toString()
+game.step()
+console.log game.toString()
+game.step()
+console.log game.toString()
+# console.log game.isAlive(b, a) for a in [0..2] for b in [0..2]
+# console.log game.neighborsAlive(1,1)
