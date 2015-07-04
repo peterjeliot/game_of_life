@@ -1,7 +1,13 @@
 class Life
   dirs: [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]
-  constructor: (grid) ->
-    @grid = grid
+  constructor: (grid, {padding}) ->
+    {left, right, top, bottom} = padding
+    width = grid[0].length + left + right
+    height = grid.length + top + bottom
+    @grid = [0...height].map -> [0...width].map -> false
+    grid.forEach (row, r) =>
+      row.forEach (cell, c) =>
+        @grid[r + top][c + left] = grid[r][c]
   isAlive: (r, c) ->
     if r in [-1, @grid.length] or c in [-1, @grid[0].length]
       return false
@@ -29,10 +35,17 @@ class Life
 
 
 
+grid = [[false,  true,  true],
+        [ true,  true, false],
+        [false,  true, false]]
+options =
+  padding:
+    left: 30
+    right: 30
+    top: 30
+    bottom: 30
 
-game = new Life([[false, false, false],
-                 [ true,  true,  true],
-                 [false, false, false]])
+game = new Life(grid, options)
 
 # console.log game.isAlive(b, a) for a in [0..2] for b in [0..2]
 # console.log game.neighborsAlive(1,1)
