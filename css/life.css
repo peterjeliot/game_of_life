@@ -1,0 +1,12 @@
+div.row {
+  display: inline-block;
+}
+
+div.cell {
+  width: 5px;
+  height: 5px;
+}
+
+div.cell.alive {
+  background-color: black;
+}
