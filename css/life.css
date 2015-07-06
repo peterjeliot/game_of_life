@@ -1,3 +1,8 @@
+div.grid {
+  border: 1px solid black;
+  display: inline-block;
+}
+
 div.row {
   display: block;
   margin: 0;
@@ -6,6 +11,7 @@ div.row {
 
 div.cell {
   display: inline-block;
+  vertical-align: top;
   width: 5px;
   height: 5px;
 }
