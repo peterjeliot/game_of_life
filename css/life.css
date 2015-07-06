@@ -1,12 +1,19 @@
 div.row {
-  display: inline-block;
+  display: block;
+  margin: 0;
+  height: 5px;
 }
 
 div.cell {
+  display: inline-block;
   width: 5px;
   height: 5px;
 }
 
 div.cell.alive {
   background-color: black;
+}
+
+div.cell.dead {
+  background-color: transparent;
 }
