@@ -188,9 +188,12 @@
   })(React.Component);
 
   seeds = {
+    "Glider": " *\n  *\n***",
+    "Lightweight spaceship": "*  *\n    *\n*   *\n ****",
+    "Diehard": "      *\n**\n *   ***",
+    "Acorn": " *\n   *\n**  ***",
     "Methuselah": " *\n   *\n**  ***",
-    "R-Pentomino": " **\n**\n *",
-    "Glider": "***    ***\n*        *\n *      *\n\n\n *      *\n*        *\n***    ***"
+    "R-Pentomino": " **\n**\n *"
   };
 
   grid = [[false, true, true], [true, true, false], [false, true, false]];

@@ -62,6 +62,27 @@ class Life extends React.Component
               div key: "col#{c}", className: "cell #{state}"
 
 seeds =
+  "Glider": """
+     *
+      *
+    ***
+  """
+  "Lightweight spaceship": """
+    *  *
+        *
+    *   *
+     ****
+  """
+  "Diehard": """
+          *
+    **
+     *   ***
+  """
+  "Acorn": """
+     *
+       *
+    **  ***
+  """
   "Methuselah": """
      *
        *
@@ -71,16 +92,6 @@ seeds =
      **
     **
      *
-  """
-  "Glider": """
-    ***    ***
-    *        *
-     *      *
-
-
-     *      *
-    *        *
-    ***    ***
   """
 
 grid = [[false,  true,  true],
